@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portail Images Interne</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f0f2f5; margin: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+        .container { background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); width: 90%; max-width: 1000px; text-align: center; }
+        #login-section { max-width: 400px; margin: auto; }
+        input { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box; }
+        button { background: #007bff; color: white; border: none; padding: 12px 20px; border-radius: 6px; cursor: pointer; width: 100%; font-weight: bold; }
+        button:hover { background: #0056b3; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; margin-top: 30px; }
+        .grid img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; transition: transform 0.3s; cursor: pointer; }
+        .grid img:hover { transform: scale(1.05); }
+        #gallery-section { display: none; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div id="login-section">
+            <h2 style="color: #333;">Accès Sécurisé</h2>
+            <p style="color: #666;">Veuillez entrer le code d'accès de l'entreprise.</p>
+            <input type="password" id="passwordField" placeholder="Mot de passe...">
+            <button onclick="checkAccess()">Se connecter</button>
+            <p id="error" style="color: red; display: none; font-size: 0.9rem;">Code incorrect.</p>
+        </div>
+
+        <div id="gallery-section">
+            <h2 style="color: #333;">Galerie d'Images</h2>
+            <hr>
+            <div class="grid" id="imageGrid">
+                </div>
+        </div>
+    </div>
+
+    <script>
+        // --- CONFIGURATION ---
+        const MOT_DE_PASSE = "BALEA"; 
+        
+        // Liste tes images ici (nom exact du fichier dans GitHub)
+        const mesImages = [
+            "logo_linde.png",
+            "logo_toyota.png",
+            "logo_still.png",
+            "logo_mitsubishi.png",
+            "logo_unicarriers.png",
+            "logo_loc.png",
+            "logo_yale.png",
+            "logo_cesab.png"
+        ];
+
+        function checkAccess() {
+            const input = document.getElementById('passwordField').value;
+            if(input === MOT_DE_PASSE) {
+                document.getElementById('login-section').style.display = 'none';
+                document.getElementById('gallery-section').style.display = 'block';
+                loadImages();
+            } else {
+                document.getElementById('error').style.display = 'block';
+            }
+        }
+
+        function loadImages() {
+            const grid = document.getElementById('imageGrid');
+            mesImages.forEach(imgName => {
+                const imgTag = document.createElement('img');
+                imgTag.src = imgName; 
+                imgTag.alt = "Image de la galerie";
+                grid.appendChild(imgTag);
+            });
+        }
+    </script>
+</body>
+</html>
