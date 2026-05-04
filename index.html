@@ -3,75 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portail Images Interne</title>
+    <title>Galerie Entreprise</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f0f2f5; margin: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
-        .container { background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); width: 90%; max-width: 1000px; text-align: center; }
-        #login-section { max-width: 400px; margin: auto; }
-        input { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box; }
-        button { background: #007bff; color: white; border: none; padding: 12px 20px; border-radius: 6px; cursor: pointer; width: 100%; font-weight: bold; }
-        button:hover { background: #0056b3; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; margin-top: 30px; }
-        .grid img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; transition: transform 0.3s; cursor: pointer; }
-        .grid img:hover { transform: scale(1.05); }
-        #gallery-section { display: none; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        header { text-align: center; color: white; margin-bottom: 40px; padding: 20px 0; }
+        header h1 { font-size: 2.5em; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        header p { font-size: 1.1em; opacity: 0.9; }
+        .section { background: white; border-radius: 12px; padding: 30px; margin-bottom: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        .section h2 { color: #333; margin-bottom: 20px; font-size: 1.8em; border-bottom: 3px solid #667eea; padding-bottom: 10px; }
+        .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; margin-bottom: 20px; }
+        .gallery-item { position: relative; overflow: hidden; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; cursor: pointer; }
+        .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 8px 12px rgba(0,0,0,0.2); }
+        .gallery-item img { width: 100%; height: 200px; object-fit: cover; display: block; }
+        .gallery-item:hover img { transform: scale(1.05); }
+        .documents { display: flex; flex-wrap: wrap; gap: 15px; }
+        .doc-link { display: inline-block; background: #667eea; color: white; padding: 12px 20px; border-radius: 6px; text-decoration: none; transition: background 0.3s; font-weight: 500; }
+        .doc-link:hover { background: #764ba2; }
+        .doc-icon { margin-right: 8px; }
+        footer { text-align: center; color: white; padding: 20px; font-size: 0.9em; opacity: 0.8; }
     </style>
 </head>
 <body>
-
     <div class="container">
-        <div id="login-section">
-            <h2 style="color: #333;">Accès Sécurisé</h2>
-            <p style="color: #666;">Veuillez entrer le code d'accès de l'entreprise.</p>
-            <input type="password" id="passwordField" placeholder="Mot de passe...">
-            <button onclick="checkAccess()">Se connecter</button>
-            <p id="error" style="color: red; display: none; font-size: 0.9rem;">Code incorrect.</p>
+        <header>
+            <h1>📸 Galerie Entreprise</h1>
+            <p>Découvrez nos produits et services</p>
+        </header>
+
+        <div class="section">
+            <h2>Images Produits & Services</h2>
+            <div class="gallery">
+                <div class="gallery-item"><img src="Bal%20detail.jpg" alt="Bal detail"></div>
+                <div class="gallery-item"><img src="Bluetooth.jpg" alt="Bluetooth"></div>
+                <div class="gallery-item"><img src="Cold.jpg" alt="Cold"></div>
+                <div class="gallery-item"><img src="Dosseret.jpg" alt="Dosseret"></div>
+                <div class="gallery-item"><img src="Endurance%20elect.png" alt="Endurance elect"></div>
+                <div class="gallery-item"><img src="FOURREAUX%20ECE%20220%20-%20024%20Pickeur.png" alt="FOURREAUX ECE 220 - 024 Pickeur"></div>
+                <div class="gallery-item"><img src="FOURREAUX%20ECE%20220%20-%20024-Photoroom.png" alt="FOURREAUX ECE 220 - 024-Photoroom"></div>
+                <div class="gallery-item"><img src="FOURREAUX%20ECE%20220%20-D%C3%A9tour%C3%A9.png" alt="FOURREAUX ECE 220 -Détouré"></div>
+                <div class="gallery-item"><img src="Fourreau%20CX%20dock%20Palette.png" alt="Fourreau CX dock Palette"></div>
+                <div class="gallery-item"><img src="Fourreau%20CX%20docks.png" alt="Fourreau CX docks"></div>
+                <div class="gallery-item"><img src="Fourreaux%20CX%20lev%C3%A9.png" alt="Fourreaux CX levé"></div>
+                <div class="gallery-item"><img src="Gemini_Generated_Image_a0xj17a0xj17a0xj.png" alt="Gemini Generated Image"></div>
+                <div class="gallery-item"><img src="HYPER-TOUR.png" alt="HYPER-TOUR"></div>
+                <div class="gallery-item"><img src="Kion.jpg" alt="Kion"></div>
+                <div class="gallery-item"><img src="Logo_%20cencora%20alloga_0.png" alt="Logo cencora alloga"></div>
+                <div class="gallery-item"><img src="N20%20coup%C3%A9.png" alt="N20 coupé"></div>
+                <div class="gallery-item"><img src="N20%20longue%20Fourches%20.png" alt="N20 longue Fourches"></div>
+                <div class="gallery-item"><img src="PLAN%20ECE-Photoroom.png" alt="PLAN ECE-Photoroom"></div>
+                <div class="gallery-item"><img src="PLAN%20ECE.png" alt="PLAN ECE"></div>
+                <div class="gallery-item"><img src="Put%20to%20light%20LED.png" alt="Put to light LED"></div>
+                <div class="gallery-item"><img src="RS232.jpg" alt="RS232"></div>
+                <div class="gallery-item"><img src="SOLEA-WCS-2020-LOGO-SEUL.png" alt="SOLEA-WCS-2020-LOGO-SEUL"></div>
+                <div class="gallery-item"><img src="SOLEA-WCS-2020.png" alt="SOLEA-WCS-2020"></div>
+                <div class="gallery-item"><img src="TPG%20ECE%20310-002.png" alt="TPG ECE 310-002"></div>
+                <div class="gallery-item"><img src="TPG-FW.png" alt="TPG-FW"></div>
+                <div class="gallery-item"><img src="USB.jpg" alt="USB"></div>
+                <div class="gallery-item"><img src="Wifi.jpg" alt="Wifi"></div>
+                <div class="gallery-item"><img src="XBS-Linde.jpg" alt="XBS-Linde"></div>
+                <div class="gallery-item"><img src="cellImage_225996298_18.jpg" alt="Cell Image 18"></div>
+                <div class="gallery-item"><img src="cellImage_225996298_19.jpg" alt="Cell Image 19"></div>
+                <div class="gallery-item"><img src="chariot-picking-1%20-%20Copie.png" alt="Chariot picking 1 copie"></div>
+                <div class="gallery-item"><img src="chariot-picking-1.png" alt="Chariot picking 1"></div>
+                <div class="gallery-item"><img src="chariot-picking-2.png" alt="Chariot picking 2"></div>
+                <div class="gallery-item"><img src="chariot-picking-3.png" alt="Chariot picking 3"></div>
+                <div class="gallery-item"><img src="couleur.png" alt="Couleur"></div>
+                <div class="gallery-item"><img src="e-Shopeur-S448-V04-03.png" alt="e-Shopeur-S448-V04-03"></div>
+                <div class="gallery-item"><img src="e-Shopeur-S448-V04-08.png" alt="e-Shopeur-S448-V04-08"></div>
+                <div class="gallery-item"><img src="fourreaux%20CX.png" alt="Fourreaux CX"></div>
+                <div class="gallery-item"><img src="gerbeur_electrique_leve.jpg" alt="Gerbeur électrique levé"></div>
+                <div class="gallery-item"><img src="imprimante_ticket_integree.jpg" alt="Imprimante ticket intégrée"></div>
+                <div class="gallery-item"><img src="indicateur_pesage_teo.jpg" alt="Indicateur pesage TEO"></div>
+                <div class="gallery-item"><img src="logo_balea%20-%20Copie.jpg" alt="Logo Balea copie"></div>
+                <div class="gallery-item"><img src="logo_balea.jpg" alt="Logo Balea"></div>
+                <div class="gallery-item"><img src="logo_balea.png" alt="Logo Balea PNG"></div>
+                <div class="gallery-item"><img src="logo_cesab.png" alt="Logo CESAB"></div>
+                <div class="gallery-item"><img src="logo_linde.png" alt="Logo Linde"></div>
+                <div class="gallery-item"><img src="logo_linde_fenwick.jpg" alt="Logo Linde Fenwick"></div>
+                <div class="gallery-item"><img src="logo_loc.png" alt="Logo LOC"></div>
+                <div class="gallery-item"><img src="logo_mitsubishi.png" alt="Logo Mitsubishi"></div>
+                <div class="gallery-item"><img src="logo_still.png" alt="Logo Still"></div>
+                <div class="gallery-item"><img src="logo_toyota.png" alt="Logo Toyota"></div>
+                <div class="gallery-item"><img src="logo_unicarriers.png" alt="Logo Unicarriers"></div>
+                <div class="gallery-item"><img src="logo_yale.png" alt="Logo Yale"></div>
+                <div class="gallery-item"><img src="longue%20fourches.jpg" alt="Longue fourches"></div>
+                <div class="gallery-item"><img src="poubelles.png" alt="Poubelles"></div>
+                <div class="gallery-item"><img src="preparateur_commande_n20.jpg" alt="Préparateur commande N20"></div>
+                <div class="gallery-item"><img src="productivit%C3%A9.png" alt="Productivité"></div>
+                <div class="gallery-item"><img src="rider.jpg" alt="Rider"></div>
+                <div class="gallery-item"><img src="secu.png" alt="Sécurité"></div>
+                <div class="gallery-item"><img src="spare%20parts.png" alt="Spare parts"></div>
+                <div class="gallery-item"><img src="suppor%20n20.jpg" alt="Support N20"></div>
+                <div class="gallery-item"><img src="tablette_industrielle_weo.jpg" alt="Tablette industrielle WEO"></div>
+                <div class="gallery-item"><img src="terminal_logistique_DCO.jpg" alt="Terminal logistique DCO"></div>
+                <div class="gallery-item"><img src="transpalette-1.png" alt="Transpalette 1"></div>
+                <div class="gallery-item"><img src="transpalette-2.png" alt="Transpalette 2"></div>
+                <div class="gallery-item"><img src="transpalette_linde_profil.jpg" alt="Transpalette Linde profil"></div>
+            </div>
         </div>
 
-        <div id="gallery-section">
-            <h2 style="color: #333;">Galerie d'Images</h2>
-            <hr>
-            <div class="grid" id="imageGrid">
-                </div>
+        <div class="section">
+            <h2>📄 Documents & Fichiers</h2>
+            <div class="documents">
+                <a href="CGV-Balea.pdf" class="doc-link"><span class="doc-icon">📕</span>CGV Balea</a>
+                <a href="DOC-COM%20_%20Courrier%20informations%20M%C3%A9trologie%20L%C3%A9gale.pdf" class="doc-link"><span class="doc-icon">📕</span>Métrologie Légale</a>
+                <a href="Manutention%20-%20Possibilit%C3%A9s%20metrologiques.pdf" class="doc-link"><span class="doc-icon">📕</span>Manutention</a>
+                <a href="R%C3%A9sum%C3%A9%20Fonctionnalit%C3%A9%20Hypertour.pdf" class="doc-link"><span class="doc-icon">📕</span>Hypertour</a>
+            </div>
         </div>
+
+        <footer>
+            <p>&copy; 2026 Galerie Entreprise BB - Tous droits réservés</p>
+        </footer>
     </div>
-
-    <script>
-        // --- CONFIGURATION ---
-        const MOT_DE_PASSE = "BALEA"; 
-        
-        // Liste tes images ici (nom exact du fichier dans GitHub)
-        const mesImages = [
-            "logo_linde.png",
-            "logo_toyota.png",
-            "logo_still.png",
-            "logo_mitsubishi.png",
-            "logo_unicarriers.png",
-            "logo_loc.png",
-            "logo_yale.png",
-            "logo_cesab.png"
-        ];
-
-        function checkAccess() {
-            const input = document.getElementById('passwordField').value;
-            if(input === MOT_DE_PASSE) {
-                document.getElementById('login-section').style.display = 'none';
-                document.getElementById('gallery-section').style.display = 'block';
-                loadImages();
-            } else {
-                document.getElementById('error').style.display = 'block';
-            }
-        }
-
-        function loadImages() {
-            const grid = document.getElementById('imageGrid');
-            mesImages.forEach(imgName => {
-                const imgTag = document.createElement('img');
-                imgTag.src = imgName; 
-                imgTag.alt = "Image de la galerie";
-                grid.appendChild(imgTag);
-            });
-        }
-    </script>
 </body>
 </html>
